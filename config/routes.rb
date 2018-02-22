@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   root to: "users#index"
 
-  get 'users/new'
-  post 'users', to: 'users#create'
+  resources :users
 
-  post '/login', to: 'users#create_session'
+  post '/login', to: 'sessions#create'
+
+  get '/new', to: 'sessions#new'
   
-  post '/logout', to: 'users#destroy_session'
-
+  post '/logout', to: 'sessions#destroy'
 
 end
