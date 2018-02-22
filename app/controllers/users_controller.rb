@@ -12,32 +12,40 @@ class UsersController < ApplicationController
     if user.save
       redirect_to '/'
     else
-      redirect_to '/'
+      redirect_to '/users/new'
     end
   end
 
+def show 
+  @user= User.find(current_user.id)
+end
 
- 
-def create_session
-    @user = User.find_by_username(params[:username])
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id 
-      flash[:message] = 'you logged in successfully'
-      redirect_to '/'
-    else 
+
+
+def edit
+    @user= User.find(current_user.id)
+  end
+
+
+def update
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      flash[:message] = 'Your blog was updated successfully'
+      redirect_to "/users/#{@user.id}"
+    else
       flash[:message] = 'try again'
-      redirect_to '/'
+      render "/users/#{@user.id}/edit"
     end
   end
 
-
-  def destroy_session
-    session[:user_id] = nil
-    flash[:message] = 'logging out ok'
-    redirect_to '/login'
+  def destroy
+    @user = User.find(current_user.id)
+    if @user.destroy
+    redirect_to '/users/new'
+    else 
+      redirect_to '/users/@user.id'
+    end
   end
-
-
 
 
 

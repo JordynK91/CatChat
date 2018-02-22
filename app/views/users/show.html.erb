@@ -1,4 +1,12 @@
-<h2>Create a new User:</h2>
+<h1> welcome to your profile </h1>
+
+<%= link_to 'delete', user_path, method: :delete %>
+
+<%= link_to 'log out', logout_path, method: :destroy %>
+
+
+<h2>Edit Your Info</h2>
+
 
 <%= form_for @user do |f| %>
 
