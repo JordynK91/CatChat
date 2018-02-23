@@ -10,15 +10,16 @@ end
 gem 'rails', '~> 5.1.5'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
+
 group :development, :test do
 
-gem 'sqlite3'
+  gem 'sqlite3'
 
 end
 
 group :production do
 
-gem 'pg'
+  gem 'pg'
 
 end
 
