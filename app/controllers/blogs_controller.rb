@@ -21,6 +21,11 @@ class BlogsController < ApplicationController
 
 	def show
 		@blog = Blog.find_by_id(params[:id])
+		@blogid = @blog.id
+		@current_comment = Comment.where(blog_id: @blog.id)
+		@comment = Comment.new(comment_params)
+		@this_comment = Comment.find_by_id(params[:id])
+
 	end
 
 	def edit
@@ -46,6 +51,11 @@ class BlogsController < ApplicationController
 private
 
 def blog_params
-  params.require(:blog).permit(:title, :content, :user_id)
+ params.require(:blog).permit(:title, :content, :user_id)
 end
+
+def comment_params
+ params.permit(:message, :blog_id, :user_id)	
+end
+
 end
