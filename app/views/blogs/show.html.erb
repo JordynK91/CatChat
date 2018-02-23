@@ -2,3 +2,26 @@
 
 <%=@blog.title %>
 <%=@blog.content %>
+
+<h1> comments </h1>
+
+<% if @current_comment != nil %>
+<% @current_comment.each do |b| %>
+<div><%= b.message %></div>
+<% if @current_user != nil%>
+<div> Delete Comment</div>
+<div> Edit Comment </div>
+<% end %>
+<% end %>
+
+
+
+<h1> Post a comment </h1>
+
+<%= form_with(model: @comment, local: true) do |f| %>
+<%= f.text_area :message %>
+<%= f.hidden_field :blog_id, :value => @blogid %>
+<%= f.submit %>
+<% end %>
+<% end %>
+

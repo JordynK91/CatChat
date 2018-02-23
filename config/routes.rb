@@ -7,10 +7,13 @@ Rails.application.routes.draw do
 
   resources :blogs
 
+  resources :comments 
+
   post '/login', to: 'sessions#create'
 
   get '/new', to: 'sessions#new'
   
   post '/logout', to: 'sessions#destroy'
+
 
 end
