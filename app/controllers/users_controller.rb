@@ -30,10 +30,8 @@ def edit
 def update
     @user = User.find(current_user.id)
     if @user.update(user_params)
-      flash[:message] = 'Your blog was updated successfully'
       redirect_to "/users/#{@user.id}"
     else
-      flash[:message] = 'try again'
       render "/users/#{@user.id}/edit"
     end
   end
