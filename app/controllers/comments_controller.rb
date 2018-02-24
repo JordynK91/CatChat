@@ -7,7 +7,6 @@ end
 def new
 	@comment= Comment.new
 	@blog = Blog.find(params[:blog_id])
-	@comment = Comment.new
 end
 
 def create
@@ -21,19 +20,17 @@ def create
 		end
 	end
 
-	# def update
-	# 	@comment = Comment.find(params[:id])
-	# 	if @comment.update(comment_params)
-	# 		redirect_to "/blogs/#{@blog.id}"
-	# 	else
-	# 		render "/blogs/#{@blog.id}/edit"
-	# 	end
-	# end
+def update
+	@comment = Comment.find(params[:id])
+	@comment.update(comment_params)
+	redirect_to "/blogs/"
+	
+	end
 
-	 def destroy
-	 	@comment = Comment.find(params[:id])
-	 	@comment.destroy
-	 	redirect_to '/blogs/'
+ def destroy
+	 @comment = Comment.find(params[:id])
+	 @comment.destroy
+	 redirect_to '/blogs/'
 
 	end
 

@@ -25,6 +25,7 @@ class BlogsController < ApplicationController
 		@current_comment = Comment.where(blog_id: @blog.id)
 		@comment = Comment.new(comment_params)
 		@this_comment = Comment.find_by_id(params[:id])
+		@current_user = User.find(session[:user_id])
 
 	end
 
