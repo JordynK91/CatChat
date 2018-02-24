@@ -9,13 +9,8 @@ class BlogsController < ApplicationController
 	end
 
 	def create
-<<<<<<< HEAD
-		@blog = Blog.new(blog_params)
-=======
-		
 		@blog = Blog.new(blog_params)
 		@blog.user_id = current_user.id
->>>>>>> 90408a3d19becbf2f3865f5eb81f33d226b715f1
 		if @blog.save
 			redirect_to '/blogs'
 		else
@@ -23,10 +18,15 @@ class BlogsController < ApplicationController
 		end
 	end
 
-<<<<<<< HEAD
-=======
+
 	def show
 		@blog = Blog.find_by_id(params[:id])
+		@blogid = @blog.id
+		@current_comment = Comment.where(blog_id: @blog.id)
+		@comment = Comment.new(comment_params)
+		@this_comment = Comment.find_by_id(params[:id])
+		@current_user = User.find(session[:user_id])
+
 	end
 
 	def edit
@@ -48,15 +48,17 @@ class BlogsController < ApplicationController
 		redirect_to new_blog_path
 	end
 
->>>>>>> 90408a3d19becbf2f3865f5eb81f33d226b715f1
 
 private
 
 def blog_params
-<<<<<<< HEAD
-  params.require(:blog).permit(:title, :content)
-=======
+  
   params.require(:blog).permit(:title, :content, :user_id)
->>>>>>> 90408a3d19becbf2f3865f5eb81f33d226b715f1
 end
+
+def comment_params
+ params.permit(:message, :blog_id, :user_id)	
+
+end
+
 end
