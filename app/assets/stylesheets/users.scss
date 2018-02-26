@@ -1,3 +1,38 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.photo { 
+	position: relative;
+	background-image: url("photo1.jpeg");
+    height: 900px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+   }
+
+ .jumbotron {
+ 		text-align: center;
+ 		margin: 50px;
+ 		font-size: 20px;
+ 
+ }
+
+ .account{
+ 	margin-top: 30px;
+ }
+
+ .header {color: lemonchiffon;
+ 		text-align: center;}
+
+ .display-1 {font-size: 200px;
+ 			text-shadow: 5px 5px black;}
+
+ .display-2 {font-size: 80px;
+ 			text-shadow: 5px 5px black;
+ 			}
+
