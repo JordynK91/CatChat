@@ -9,6 +9,7 @@ def new
 	@blog = Blog.find(params[:blog_id])
 end
 
+
 def create
 		@comment = Comment.new(comment_params)
 		@comment.user_id = current_user.id
@@ -20,9 +21,10 @@ def create
 		end
 	end
 
+
 def update
-	@comment = Comment.find(params[:id])
-	@comment.update(comment_params)
+	@this_comment = Comment.find_by_id(params[:id])
+	@this_comment.update(comment_params)
 	redirect_to "/blogs/"
 	
 	end
