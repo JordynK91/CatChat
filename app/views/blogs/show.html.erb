@@ -11,8 +11,12 @@
 	<% @blog.comments.each do |b| %>
 			<% if b.user_id == @current_user.id %>
 				<div><%= b.message %></div>
-				<div> Edit </div>
-				<%= link_to 'delete', comment_path, method: :delete %>
+				<%= form_for(b, :url=> "/comments/#{b.id}/") do |f| %>
+				<%= f.text_area :message %>
+				<%= f.text_area :id, :value => b.id%>
+				<%= f.submit %>
+				<% end %>
+				<%= link_to 'delete', comment_path(b.id), method: :delete %>
 			<% else %>
 				<div><%= b.message %></div>
 			<% end %>
