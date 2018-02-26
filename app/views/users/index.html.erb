@@ -1,13 +1,27 @@
-<h1> Welcome to CatChat</h1>
 
-<h2>Login</h2>
+<div class = 'photo'>
 
-<%= form_tag(login_path) do  %>
-<%= text_field_tag :username%>
-<%= text_field_tag :password %>
-<%= submit_tag 'Login' %>
 
-<% end %>
+<div class = "container">
+	<div class = 'header'>
+     <h1 class = 'display-1'> Welcome to CatChat </h1>
+    <h2 class = 'display-2'>Where Felines Fans Connect.</h2>
+	</div>
+	</div>
 
-<h2><a href = '/users/new/'> Make an account </a></h2>
+<div class = 'jumbotron'>
+	<div class = 'login'>
+		<%= form_tag(login_path) do  %>
+		Username: <%= text_field_tag :username%>
+		Password: <%= text_field_tag :password %>
+		<%= submit_tag 'Login' %>
+		<div class = 'account'>
+ 		 <p class="lead">
+  		  <a class="btn btn-primary btn-lg" href="/users/new/" role="button">Make an Account</a>
+  		</p>
+		<% end %>
+	</div>
+</div>
 
+
+</div>
