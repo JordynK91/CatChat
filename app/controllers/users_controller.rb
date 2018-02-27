@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 	def index
-	end 
+  end 
 
 	def new
 	@user = User.new
@@ -17,7 +17,9 @@ class UsersController < ApplicationController
   end
 
 def show 
+  @current_user = User.find(session[:user_id])
   @user= User.find(current_user.id)
+
 end
 
 
@@ -53,6 +55,8 @@ def user_params
   params.require(:user).permit(:username, :password, :name, :catname, :location)
 end
 
-
+def blog_params
+ params.require(:blog).permit(:title, :content, :user_id)
+end
 
 end

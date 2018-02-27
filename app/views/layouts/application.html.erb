@@ -8,18 +8,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<nav class="navbar navbar-light bg-faded">
-  </button>
-  <class="navbar-brand"> CatChat</div>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Dashboard</a>
-      <a class="nav-item nav-link" href="#">Feed</a>
-      <a class="nav-item nav-link" href="#">Sign Out</a>
-    </div>
-  </div>
-</nav>
+
+
+    <% if @current_user != nil %>
+        <nav class="navbar navbar-inverse bg-primary">
+         <div class = 'container-fluid'>
+          <div class = 'row'>
+              <div class = 'col-lg-5'>
+               <h1><%=link_to "Feed", blogs_path %> </h1>
+              </div>
+              <div class = 'col-lg-5'>
+               <h1> <%= link_to "Dashboard", user_path(@current_user)%> </h1>
+             </div>
+               <div class = 'col-lg-2'>
+              <h1>  <%= link_to'Sign Out', logout_path, method: :destroy %> </h1>
+              </div>
+          </div>
+        </div>
+    </nav>
+    <% end %>
 
   <body>
 

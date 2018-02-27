@@ -1,13 +1,19 @@
-<h1> welcome to your profile </h1>
+<div class = 'background'>
+<div class = 'jumbotron'>
 
-<%= link_to 'delete', user_path, method: :delete %>
+<h1> Welcome to your Profile, <%= @user.name %> </h1>
 
-<%= link_to 'log out', logout_path, method: :destroy %>
+ <%= link_to 'Write a New Post', new_blog_path%> 
 
+<h1> View Your Blogs: </h1>
 
-<h2>Edit Your Info</h2>
+<% @user.blogs.each do |b| %>
 
+<div><%=link_to b.title, edit_blog_path(b.id) %></div>
 
+<% end %>
+
+<h2>Edit Your Info:</h2>
 <%= form_for @user do |f| %>
 
 Username:<%= f.text_field :username %><br>
@@ -17,3 +23,9 @@ Cat Name:<%= f.text_field :catname %><br>
 Location:<%= f.text_field :location%><br>
 <%= f.submit %>
 <% end %>
+
+ <%= link_to 'Delete Your Account', user_path, method: :delete %> 
+
+
+</div>
+</div>

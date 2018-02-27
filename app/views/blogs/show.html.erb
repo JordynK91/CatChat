@@ -1,17 +1,19 @@
-<h1>this is a blog</h1>
+<div class = 'background'>
 
-<%=@blog.title %>
-<%=@blog.content %>
+<div class = 'jumbotron'>
+<h1><%=@blog.title %></h1>
+<h2>By: <%=link_to @user.name, user_path(@user.id)%></h2>
+<h3><%=@blog.content %></h3>
 
-<h1> comments </h1>
 
+<h4> Comments: </h4>
 <% if @current_comment != nil %>
 	<% @blog.comments.each do |b| %>
 			<% if b.user_id == @current_user.id %>
 				<div><%= b.message %></div>
 				<%= form_for(b, :url=> "/comments/#{b.id}/") do |f| %>
 				<%= f.text_area :message %>
-				<%= f.text_area :id, :value => b.id%>
+				<%= f.hidden_field :id, :value => b.id%>
 				<%= f.submit %>
 				<% end %>
 				<%= link_to 'delete', comment_path(b.id), method: :delete %>
@@ -21,8 +23,7 @@
 		<% end %>
 	
 
-
-<h1> Post a comment </h1>
+<h4> Post a comment: </h4>
 
 <%= form_with(model: @comment, local: true) do |f| %>
 <%= f.text_area :message %>
@@ -30,3 +31,6 @@
 <%= f.submit %>
 <% end %>
 <% end %>
+
+</div>
+</div>
