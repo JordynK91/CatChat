@@ -7,9 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-
-
+<!-- navbar only presents when user is logged in -->
     <% if @current_user != nil %>
         <nav class="navbar navbar-inverse bg-primary">
          <div class = 'container-fluid'>
@@ -18,7 +16,7 @@
                <h1><%=link_to "Feed", blogs_path %> </h1>
               </div>
               <div class = 'col-lg-5'>
-               <h1> <%= link_to "Dashboard", user_path(@current_user)%> </h1>
+               <h1> <%= link_to "Dashboard", edit_user_path(@current_user)%> </h1>
              </div>
                <div class = 'col-lg-2'>
               <h1>  <%= link_to'Sign Out', logout_path, method: :destroy %> </h1>
@@ -27,7 +25,6 @@
         </div>
     </nav>
     <% end %>
-
   <body>
 
 

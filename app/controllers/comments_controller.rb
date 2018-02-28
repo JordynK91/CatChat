@@ -19,6 +19,10 @@ def create
 		end
 	end
 
+def edit 
+	@@this_comment = Comment.find_by_id(params[:id])
+end
+
 
 def update
 	@this_comment = Comment.find_by_id(params[:id])

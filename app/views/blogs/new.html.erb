@@ -1,3 +1,5 @@
+<!-- form where users can write a blog entry -->
+
 <div class = 'background'>
 
 <div class = 'jumbotron'>
@@ -5,6 +7,7 @@
 <h1> Write Your Blog Post </h1>
 <%= form_for @blog do |f| %>
 <div> Title: <%= f.text_field :title %></div>
+<br>
 <div> Content: <%= f.text_area :content, size: "50x10" %> </div>
 <div><%= f.submit %></div>
 <% end %>

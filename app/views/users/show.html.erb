@@ -1,30 +1,23 @@
+<!-- displays the public-facing profile of a user. if a user clicks on the link to their own profile they are re-directed to the dashboard -->
+
 <div class = 'background'>
+
 <div class = 'jumbotron'>
 
-<h1> Welcome to your Profile, <%= @user.name %> </h1>
+<h1> Welcome to <%= @user.name %>'s Profile </h1>
 
- <%= link_to 'Write a New Post', new_blog_path%> 
 
-<h1> View Your Blogs: </h1>
+<h2> <%= @user.name %>'s Blogs: </h2>
 
 <% @user.blogs.each do |b| %>
-
-<div><%=link_to b.title, edit_blog_path(b.id) %></div>
+<div><%=link_to b.title, blog_path(b.id) %></div>
 
 <% end %>
 
-<h2>Edit Your Info:</h2>
-<%= form_for @user do |f| %>
+<h2><%= @user.name %>'s Info:</h2>
+<div>My Cat's Name is...<%=@user.catname%></div>
+<div>I live in..<%=@user.location%></div>
 
-Username:<%= f.text_field :username %><br>
-Password:<%= f.text_field :password %><br>
-Name:<%= f.text_field :name %><br>
-Cat Name:<%= f.text_field :catname %><br>
-Location:<%= f.text_field :location%><br>
-<%= f.submit %>
-<% end %>
-
- <%= link_to 'Delete Your Account', user_path, method: :delete %> 
 
 
 </div>

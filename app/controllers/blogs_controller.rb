@@ -1,7 +1,5 @@
 class BlogsController < ApplicationController
 
-
-
 	def index
 		@blogs = Blog.all
 		@current_user = User.find(session[:user_id])
@@ -32,7 +30,7 @@ class BlogsController < ApplicationController
 		@comment = Comment.new(comment_params)
 		@this_comment = Comment.find_by_id(params[:id])
 		@current_user = User.find(session[:user_id])
-
+ 		@user_comment = User.find_by_id(@comment)
 	end
 
 	def edit

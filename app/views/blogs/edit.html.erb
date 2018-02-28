@@ -1,3 +1,5 @@
+<!-- form for a user to edit and delete their blog posts. -->
+
 <div class = 'background'>
 
 <div class = 'jumbotron'>
@@ -5,16 +7,15 @@
 <h1> Edit Your Blog Post </h1>
 <%= form_for @blog do |f| %>
 <div> <%= f.text_field :title %></div>
+<br>
 <div> <%= f.text_area :content, size: "50x10" %> </div>
 <div><%= f.submit %></div>
 <% end %>
+<br>
+<%= link_to 'Delete', blog_path, method: :delete, class: :delete %>
 
 </div>
 </div>
-</div>
-
-<%= link_to 'delete', blog_path, method: :delete %>
 
 </div>
 
-</div>

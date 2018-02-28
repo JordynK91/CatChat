@@ -1,3 +1,5 @@
+<!-- form for creating a new user account -->
+
 <nav class="navbar">
    <div class = 'container-fluid'>
       <div class = 'row'>
@@ -11,15 +13,23 @@
               </div>
 <div class = 'background'>
 <div class = 'jumbotron'>
-<h2>Create a new User:</h2>
+<h2>Create a New Account:</h2>
+
+<% if flash[:alert] %>
+      <div id="alert">
+         <%= flash[:alert] %> 
+      </div>
+<% end %>
 
 <%= form_for @user do |f| %>
 
-Username:<%= f.text_field :username %><br>
-Password:<%= f.text_field :password %><br>
-Name:<%= f.text_field :name %><br>
-Cat Name:<%= f.text_field :catname %><br>
-Location:<%= f.text_field :location%><br>
+Username:<%= f.text_field :username %>
+Password:<%= f.text_field :password %>
+<br>
+Name:<%= f.text_field :name %>
+Cat Name:<%= f.text_field :catname %>
+Location:<%= f.text_field :location%>
+<br>
 <%= f.submit %>
 <% end %>
 </div>

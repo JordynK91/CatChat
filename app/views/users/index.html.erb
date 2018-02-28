@@ -1,4 +1,4 @@
-
+<!-- landing page for the site -->
 <div class = 'photo'>
 
 
@@ -8,6 +8,12 @@
     <h2 class = 'display-2'>Where Felines Fans Connect.</h2>
 	</div>
 	</div>
+	
+<% if flash[:alert] %>
+      <div id="alert">
+         <%= flash[:alert] %> 
+      </div>
+<% end %>
 
 <div class = 'jumbotron'>
 	<div class = 'login'>
