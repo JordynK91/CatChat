@@ -21,7 +21,6 @@
 
 $(document).ready(function() {
    $(".editor").click(function(event){
-   	event.preventDefault()
      $(".editor").siblings(".edit_comment").toggle();
  });
 });
