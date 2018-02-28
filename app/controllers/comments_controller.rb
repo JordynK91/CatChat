@@ -16,10 +16,12 @@ def create
 		@blogid = params[:id]
 		if @comment.save
 			redirect_to "/blogs/"
-		else
-			redirect_to '/'
 		end
 	end
+
+def edit 
+	@@this_comment = Comment.find_by_id(params[:id])
+end
 
 
 def update
@@ -32,7 +34,7 @@ def update
  def destroy
 	 @comment = Comment.find(params[:id])
 	 @comment.destroy
-	 redirect_to '/blogs/'
+	 redirect_to "/blogs/"
 
 	end
 

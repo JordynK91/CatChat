@@ -1,6 +1,17 @@
-<%= form_for @blog do |f| %>
+<!-- form where users can write a blog entry -->
 
-Title: <%= f.text_field :title %>
-Content: <%= f.text_area :content %>
-<%= f.submit %>
+<div class = 'background'>
+
+<div class = 'jumbotron'>
+	<div class = 'container-fluid'>
+<h1> Write Your Blog Post </h1>
+<%= form_for @blog do |f| %>
+<div> Title: <%= f.text_field :title %></div>
+<br>
+<div> Content: <%= f.text_area :content, size: "50x10" %> </div>
+<div><%= f.submit %></div>
 <% end %>
+
+</div>
+</div>
+</div>

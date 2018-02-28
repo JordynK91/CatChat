@@ -2,18 +2,21 @@ class BlogsController < ApplicationController
 
 	def index
 		@blogs = Blog.all
+		@current_user = User.find(session[:user_id])
 	end 
 
 	def new
 		@blog = Blog.new
+		@current_user = User.find(session[:user_id])
 	end
 
 	def create
 		
 		@blog = Blog.new(blog_params)
 		@blog.user_id = current_user.id
+		@current_user = User.find(session[:user_id])
 		if @blog.save
-			redirect_to '/blogs'
+			redirect_to "/blogs/#{@blog.id}"
 		else
 			render '/blogs/new'
 		end
@@ -22,19 +25,22 @@ class BlogsController < ApplicationController
 	def show
 		@blog = Blog.find_by_id(params[:id])
 		@blogid = @blog.id
+		@user = User.find_by_id(@blog.user_id)
 		@current_comment = Comment.where(blog_id: @blog.id)
 		@comment = Comment.new(comment_params)
 		@this_comment = Comment.find_by_id(params[:id])
 		@current_user = User.find(session[:user_id])
-
+ 		@user_comment = User.find_by_id(@comment)
 	end
 
 	def edit
 		@blog = Blog.find_by_id(params[:id])
+		@current_user = User.find(session[:user_id])
 	end
 
 	def update
 		@blog = Blog.find(params[:id])
+		@current_user = User.find(session[:user_id])
 		if @blog.update(blog_params)
 			redirect_to "/blogs/#{@blog.id}"
 		else
@@ -44,6 +50,7 @@ class BlogsController < ApplicationController
 
 	def destroy
 		@blog = Blog.find(params[:id])
+		@current_user = User.find(session[:user_id])
 		@blog.destroy
 		redirect_to new_blog_path
 	end
