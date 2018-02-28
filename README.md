@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CatChat:
 
-Things you may want to cover:
+A blogging platform for cat lovers made with Ruby on Rails. 
 
-* Ruby version
 
-* System dependencies
+Getting Started: 
 
-* Configuration
+Please use the username "CatLover123" and password "123" to login and explore the website. You are also more than welcome to make an account.
 
-* Database creation
+Version:
+1.0
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Author:
+Jordyn Kimelheim

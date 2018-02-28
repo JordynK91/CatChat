@@ -2,3 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.background { 
+	position: relative;
+	background-image: url("background.jpg");
+    width: 100%;
+    height: 1000px;
+    background-position: center;
+    background-size: cover;
+    bottom: 50px;
+
+   }
+
+.jumbotron {
+position: relative;
+top: 50px;
+border: solid;
+
+}
+
+.edit_comment{
+display: none;
+
+}
+
+
+.box {
+margin-top: 100px;
+width: 50%;
+position: relative;
+left: 25%;
+height: 500px;
+background-color: white;
+border: solid;
+text-align: center;
+
+}
+
+.delete{
+    color: red;
+    font-size: 40px;
+
+}

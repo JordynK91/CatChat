@@ -1,0 +1,38 @@
+<!-- dashboard where user can write a post, edit their previous blogs and their user info, nad delete their account -->
+<div class = 'background'>
+
+<div class = 'jumbotron'>
+
+<h1> Welcome to your Profile, <%= @user.name %> </h1>
+
+<div class = 'write_box'>
+ <%= link_to 'Write a New Post', new_blog_path, class: :write%>
+ </div> 
+
+<h2> Edit Your Blogs: </h2>
+
+<% @user.blogs.each do |b| %>
+
+<div><%=link_to b.title, edit_blog_path(b.id) %></div>
+
+<% end %>
+
+<h2>Edit Your Info:</h2>
+<%= form_for @user do |f| %>
+
+Username:<%= f.text_field :username %>
+Password:<%= f.text_field :password %>
+<br>
+Name:<%= f.text_field :name %>
+Cat Name:<%= f.text_field :catname %>
+Location:<%= f.text_field :location%>
+<br>
+<%= f.submit %>
+<% end %>
+
+<div class = 'delete_box'>
+<%= link_to 'Delete Your Account', edit_user_path, method: :delete , class: :delete %> 
+</div>
+
+</div>
+</div>

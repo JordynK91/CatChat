@@ -1,7 +1,21 @@
-<h1> Check Out the Feed </h1>
+<!-- lists all user created blogs. 
+when user clicks the link they are directed to that blog entry -->
+
+
+<div class = 'background'>
+
+
+<div class = 'jumbotron'>
+
+
+<h1> Check Out the Feed!</h1>
 
 <% @blogs.each do |b| %>
 
-<div><%= b.title %></div>
+<div><%=link_to b.title, blog_path(b.id) %></div>
 
 <% end %>
+
+</div>
+
+</div>

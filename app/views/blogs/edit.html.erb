@@ -1,11 +1,21 @@
-<h2>Edit form for Blog</h2>
+<!-- form for a user to edit and delete their blog posts. -->
 
+<div class = 'background'>
 
+<div class = 'jumbotron'>
+	<div class = 'container-fluid'>
+<h1> Edit Your Blog Post </h1>
 <%= form_for @blog do |f| %>
-
-<%= f.text_field :title %>
-<%= f.text_area :content %>
-<%= f.submit %>
+<div> <%= f.text_field :title %></div>
+<br>
+<div> <%= f.text_area :content, size: "50x10" %> </div>
+<div><%= f.submit %></div>
 <% end %>
+<br>
+<%= link_to 'Delete', blog_path, method: :delete, class: :delete %>
 
-<%= link_to 'delete', blog_path, method: :delete %>
+</div>
+</div>
+
+</div>
+
