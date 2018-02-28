@@ -6,7 +6,7 @@ window.onload = function(){
 	var editComment = document.getElementsByClassName('edit_comment')
 	var editor = document.getElementsByClassName("editor")
 
-	for(let i=0;i<editor.length;i++){
+	for(i=0;i<editor.length;i++){
 		editor[i].addEventListener('click', function(event){
 			showForm(i)
 		})
