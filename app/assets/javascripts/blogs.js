@@ -1,4 +1,7 @@
 // function used to toggle the edit options for a comment
+
+
+
 window.onload = function(){
 	var editComment = document.getElementsByClassName('edit_comment')
 	var editor = document.getElementsByClassName("editor")
