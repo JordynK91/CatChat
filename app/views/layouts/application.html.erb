@@ -10,16 +10,15 @@
 <!-- navbar only presents when user is logged in -->
     <% if @current_user != nil %>
         <nav class="navbar navbar-inverse bg-primary">
-         <div class = 'container-fluid'>
-          <div class = 'row'>
-              <div class = 'col-lg-5'>
-               <h1><%=link_to "Feed", blogs_path %> </h1>
+            <div class ='nav navbar-nav navbar-right'>
+              <div>
+              <h4> <%=link_to "Feed", blogs_path %> </h4>
+            </div>
+            <div>
+              <h4> <%= link_to "Dashboard", edit_user_path(@current_user)%></h4>
               </div>
-              <div class = 'col-lg-5'>
-               <h1> <%= link_to "Dashboard", edit_user_path(@current_user)%> </h1>
-             </div>
-               <div class = 'col-lg-2'>
-              <h1>  <%= link_to'Sign Out', logout_path, method: :destroy %> </h1>
+                  <div class ='nav navbar-nav navbar-left'>
+             <h4> <%= link_to'Sign Out', logout_path, method: :destroy %></h4>
               </div>
           </div>
         </div>
