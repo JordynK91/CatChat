@@ -19,21 +19,27 @@
 
 // }
 
-// $(document).ready(function() {
-//    $(".editor").click(function(event){
-//    	event.preventDefault()
-//      $(".editor").siblings(".edit_comment").toggle();
-//  });
-// });
+//below works execpt for that once you hit edit on a comment you cannot activate it again unless you hard restart the page
+//bug fix is in the works
 
-$(document).ready(function(){
- 	$(".editor").click(function(event){
- 		event.stopPropagation()
- 		if($(".edit_comment").css("display") == "none"){	
- 			$(".editor").siblings(".edit_comment").css("display","block")}	
- 		else {
- 			$(".editor").siblings(".edit_comment").css("display","none")}
- 	}
+$(document).ready(function() {
+   $(".editor").click(function(event){
+   	event.preventDefault()
+     $(".editor").siblings(".edit_comment").toggle();
+ 	});
+});
 
- )})
+
+// alternative syntax:
+
+// $(document).ready(function(){
+//  	$(".editor").click(function(event){
+//  		event.stopPropagation()
+//  		if($(".edit_comment").css("display") == "none"){	
+//  			$(".editor").siblings(".edit_comment").css("display","block")}	
+//  		else {
+//  			$(".editor").siblings(".edit_comment").css("display","none")}
+//  	}
+
+//  )})
 

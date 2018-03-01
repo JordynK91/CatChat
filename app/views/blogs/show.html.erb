@@ -23,7 +23,7 @@
 				<%= form_for(b, :url=> "/comments/#{b.id}/") do |f| %>
 				<%= f.text_area :message, :id => 'comment-text'  %>
 				<%= f.hidden_field :id, :value => b.id%>
-				<%= f.submit %>
+				<%= f.submit "Submit", :id => "submit" %>
 				<% end %>
 				<div class='editor'><a href = '#' >Edit</a></div> 
 				<%= link_to 'Delete', comment_path(b.id), method: :delete %>

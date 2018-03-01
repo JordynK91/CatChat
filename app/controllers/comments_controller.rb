@@ -38,8 +38,6 @@ def update
 
 	end
 
-
-
 private
 
 def comment_params

@@ -9,19 +9,18 @@
   </head>
 <!-- navbar only presents when user is logged in -->
     <% if @current_user != nil %>
-        <nav class="navbar navbar-inverse bg-primary">
-            <div class ='nav navbar-nav navbar-right'>
-              <div>
-              <h4> <%=link_to "Feed", blogs_path %> </h4>
-            </div>
-            <div>
-              <h4> <%= link_to "Dashboard", edit_user_path(@current_user)%></h4>
-              </div>
-                  <div class ='nav navbar-nav navbar-left'>
-             <h4> <%= link_to'Sign Out', logout_path, method: :destroy %></h4>
-              </div>
-          </div>
-        </div>
+        <nav class="navbar navbar-inverse">      
+             <ul class="nav navbar-nav navbar-left">
+               <li class="active">
+              <%=link_to "Feed", blogs_path %>
+              </li>
+              <li class = "active">
+              <%= link_to "Dashboard", edit_user_path(@current_user)%>
+              </li>
+            <li class = "active"> 
+              <%= link_to'Sign Out', logout_path, method: :destroy %>
+            </li>
+          </ul>
     </nav>
     <% end %>
   <body>
