@@ -13,7 +13,7 @@ Please use the username "CatLover123" and password "123" to login and explore th
 Hat Tip:
 
 Background illustration by <a rel="nofollow" href="https://vecteezy.com">Vecteezy</a>
-Text for sample blog entries taken from <a rel="nofollow" href="https://wikipedia.com">Vecteezy</a>
+Text for sample blog entries taken from <a rel="nofollow" href="https://wikipedia.com"> Wikipedia</a>
 
 
 Version:
